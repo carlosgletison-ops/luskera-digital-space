@@ -45,7 +45,7 @@ export function HeroSection() {
       </motion.nav>
 
       {/* Main Grid: Editorial Headline (Left) & Portrait (Right) */}
-      <div className="flex-1 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center my-auto">
+      <div className="flex-1 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center my-auto w-full">
         {/* Left Column: Typography & Narrative */}
         <div className="lg:col-span-7 flex flex-col justify-center z-10 order-2 lg:order-1">
           {/* Kicker Tag */}
@@ -118,7 +118,8 @@ export function HeroSection() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-none aspect-[4/5] rounded-none overflow-hidden border border-white/[0.08] bg-[#141417] shadow-2xl group"
+            style={{ position: "relative", aspectRatio: "4/5", width: "100%", maxWidth: "460px" }}
+            className="relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[460px] aspect-[4/5] rounded-none overflow-hidden border border-white/[0.08] bg-[#141417] shadow-2xl group mx-auto lg:ml-auto lg:mr-0"
           >
             {/* Ambient Backlight matching Lucas's warm hair light */}
             <div
@@ -133,6 +134,7 @@ export function HeroSection() {
               fill
               priority
               sizes="(max-width: 768px) 90vw, (max-width: 1200px) 45vw, 480px"
+              style={{ objectFit: "cover", objectPosition: "center" }}
               className="object-cover object-center filter contrast-[1.04] brightness-[0.98] transition-transform duration-1000 ease-out group-hover:scale-[1.02]"
             />
 
